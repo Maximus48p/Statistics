@@ -65,7 +65,8 @@ class CanvasGraph extends Graph {
             // Should we do any final image transformation
             if( $this->iImgTrans ) {
                 if( !class_exists('ImgTrans',false) ) {
-                    require_once('jpgraph_imgtrans.php');
+					$jgraph_folder = plugin_config_get('jpgraph_folder') . DIRECTORY_SEPARATOR;
+                    require_once($jgraph_folder . 'jpgraph_imgtrans.php');
                 }
 
                 $tform = new ImgTrans($this->img->img);

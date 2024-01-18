@@ -4,6 +4,8 @@
 
 require_once( 'core.php' );
 
+$jgraph_folder = plugin_config_get('jpgraph_folder') . DIRECTORY_SEPARATOR;
+
 if( !defined( 'MANTIS_VERSION' ) ) { exit(); }
 
 // Session

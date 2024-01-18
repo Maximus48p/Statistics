@@ -8,7 +8,10 @@
 // Copyright (c) Asial Corporation. All rights reserved.
 //========================================================================
 */
-require_once('jpgraph_meshinterpolate.inc.php');
+
+$jgraph_folder = plugin_config_get('jpgraph_folder') . DIRECTORY_SEPARATOR;
+
+require_once($jgraph_folder . 'jpgraph_meshinterpolate.inc.php');
 define('HORIZ_EDGE',0);
 define('VERT_EDGE',1);
 

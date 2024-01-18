@@ -11,6 +11,10 @@ print_manage_menu( 'manage_plugin_page.php' );
 
 require_once 'statistics_api.php';
 
+$f_access_threshold 	= plugin_config_get('access_threshold');
+$f_jpgraph_folder		= plugin_config_get('jpgraph_folder');
+
+
 // Which reports to show
 $confWhichReportsToShow = '';
 
@@ -80,6 +84,26 @@ foreach ( $startDateInputFilter_arr as $key => $val ) {
 
                             <table class="table table-bordered table-condensed table-striped">
 
+								<tr>
+									<td class="category">
+										<span class="required">*</span> <?php echo plugin_lang_get('access_threshold') ?>
+									</td>
+									<td>
+										<select name="access_threshold">
+											<?php print_enum_string_option_list('access_levels', $f_access_threshold ) ?>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="category">
+										<span class="required">*</span> <?php echo plugin_lang_get('jpgraph_folder') . ' plugins/Statistics/jpgraph' . '<br />'; echo plugin_lang_get('library_folder') . config_get( 'library_path' )?>
+									</td>
+									<td>
+										<input id="jpgraph_folder" type="string" name="jpgraph_folder" class="input-sm" size="50" maxlength="200" required value=<?php echo plugin_config_get('jpgraph_folder') ?> />
+										<?php echo '<br />' . plugin_lang_get('seperators') ?>
+									</td>
+								</tr>
+								
                                 <tr>
                                     <th class="category width-40">
                                         <?php echo lang_get( 'plugin_Statistics_reports' ); ?>

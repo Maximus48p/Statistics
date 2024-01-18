@@ -8,14 +8,16 @@
 // Copyright (c) Asial Corporation. All rights reserved.
 //========================================================================
 
+$jgraph_folder = plugin_config_get('jpgraph_folder') . DIRECTORY_SEPARATOR;
+
 require_once('jpg-config.inc.php');
-require_once('jpgraph_gradient.php');
-require_once('jpgraph_errhandler.inc.php');
-require_once('jpgraph_ttf.inc.php');
-require_once('jpgraph_rgb.inc.php');
-require_once('jpgraph_text.inc.php');
-require_once('jpgraph_legend.inc.php');
-require_once('jpgraph_theme.inc.php');
+require_once($jgraph_folder . 'jpgraph_gradient.php');
+require_once($jgraph_folder . 'jpgraph_errhandler.inc.php');
+require_once($jgraph_folder . 'jpgraph_ttf.inc.php');
+require_once($jgraph_folder . 'jpgraph_rgb.inc.php');
+require_once($jgraph_folder . 'jpgraph_text.inc.php');
+require_once($jgraph_folder . 'jpgraph_legend.inc.php');
+require_once($jgraph_folder . 'jpgraph_theme.inc.php');
 require_once('gd_image.inc.php');
 
 // Version info
@@ -2258,7 +2260,7 @@ class Graph extends stdClass {
             // Should we do any final image transformation
             if( $this->iImgTrans ) {
                 if( !class_exists('ImgTrans',false) ) {
-                    require_once('jpgraph_imgtrans.php');
+                    require_once($jgraph_folder . 'jpgraph_imgtrans.php');
                     //JpGraphError::Raise('In order to use image transformation you must include the file jpgraph_imgtrans.php in your script.');
                 }
 

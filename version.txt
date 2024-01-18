@@ -1,3 +1,5 @@
+Version: 1.0.3#
+Make the jpgraph path variable and to be set in config page.
 Version: 1.0.2#
 Devurl: https://github.com/mantisbt-plugins/Statistics/blob/main/version.txt #
 Location: https://github.com/mantisbt-plugins/Statistics/blob/main/version/archive/refs/heads/main.zip #

@@ -8,8 +8,8 @@
  // Copyright (c) Asial Corporation. All rights reserved.
  //========================================================================
  */
-
-require_once('jpgraph_plotband.php');
+$jgraph_folder = plugin_config_get('jpgraph_folder') . DIRECTORY_SEPARATOR;
+require_once($jgraph_folder . 'jpgraph_plotband.php');
 
 // Pattern for Bars
 DEFINE('PATTERN_DIAG1',1);

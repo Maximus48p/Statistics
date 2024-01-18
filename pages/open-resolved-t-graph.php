@@ -2,8 +2,8 @@
 # Statistics - a statistics plugin for MantisBT
 #
 require_once ('statistics_api.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph_bar.php');
+require_once ( $jgraph_folder . 'jpgraph.php');
+require_once ( $jgraph_folder . 'jpgraph_bar.php');
 
 $dates		= explode( ',',$_GET['dates'] );
 $open		= explode( ',',$_GET['open'] );

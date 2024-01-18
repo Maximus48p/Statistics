@@ -5,6 +5,11 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
+$f_access_threshold 			= gpc_get_string( 'access_threshold' );
+$f_jpgraph_folder 				= gpc_get_string( 'jpgraph_folder' );
+plugin_config_set( 'access_threshold', $f_access_threshold );
+plugin_config_set( 'jpgraph_folder', $f_jpgraph_folder );
+
 require_once 'statistics_api.php';
 
 if ( FALSE == form_security_validate('config') ) { exit; };
